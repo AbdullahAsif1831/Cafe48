@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/materialize.min.css">
+  <link rel="stylesheet" href="/all.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/adminS.css">
+
+  <title>Cafe48</title>
+</head>
+
+<body>
+  <div id="adminSignIn">
+    <div class="sideImgSignIn">
+      <img id="signupside" src="/images/restu.png" alt="IMG">
+    </div>
+    
+
+    <div id="adminSignInForm">
+      <br><br><br>
+      <h2 class="siginname toWhiteAdmin">Sign In to Your Account</h2>
+      <form action="/users/login" method="POST" class="row signinforminside">
+       
+        <div class="row mt-5">
+              
+              
+              <form action="/admins/login" method="POST">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter Email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Enter Password"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+              </form>
+              <br>
+              <p class="lead mt-4">
+                Not a member yet ?
+<a href="/users/register" class="to_register">Join us</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        
+                        
+    </div>
+    <script src="/materialize.min.js"></script>
+
+</body>
+
+</html>
+      

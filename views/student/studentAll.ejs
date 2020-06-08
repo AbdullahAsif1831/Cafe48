@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>
+            <b>Dishes </b>List
+            <a href="/student.route/add" class="">
+              <i class="fas fa-plus-circle" style="color:green"></i>
+            </a>
+          </h2>
+        </div>
+       
+      </div>
+      <div class="row">
+        <div class="col-sm-8"></div>
+        <div class="col-sm-4 ">
+          <h1>
+            <a href="/student.route/report/all" class="float-right" target="blank">
+              <i class="fas fa-file-pdf" style="color:rgb(184, 75, 12)"></i>
+            </a>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <% if(student_add_success_msg != ''){ %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= student_add_success_msg %>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% } %> <% if(student_del_success_msg != ''){ %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= student_del_success_msg %>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% } %> <% if(student_update_success_msg != ''){ %>
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      <%= student_update_success_msg %>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% } %>
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Dish Number <i class="fa fa-sort"></i></th>
+          <th>Dish Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(typeof students != 'undefined'){ %> <%
+       students.forEach(function(student) { %>
+        <tr>
+          <td><%= student.roll%></td>
+          <td><%= student.name%></td>
+          <td>
+            <a
+              href="/student.route/<%=student._id%>"
+              class="view"
+              title="View"
+              data-toggle="tooltip"
+              ><i class="material-icons">&#xE417;</i></a
+            >
+            <a
+              href="/student.route/update/<%=student._id%>"
+              class="edit"
+              title="Edit"
+              data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a
+            >
+            <a
+              href="/student.route/delete/<%=student._id%>"
+              class="delete"
+              title="Delete"
+              data-toggle="tooltip"
+              ><i class="material-icons">&#xE872;</i></a
+            >
+          </td>
+        </tr>
+        <% }); %> <% } %>
+      </tbody>
+    </table>
+   
+  </div>
+</div>
